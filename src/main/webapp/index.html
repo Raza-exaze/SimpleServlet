@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Dynamic Website</title>
+    <style>
+        input
+        {
+        height:30px;
+        width:200px;
+        border-radius:22px;
+        }
+        input[type="submit"]:hover
+        {
+        background-color:black;
+        color:white;
+        }
+    </style>
 </head>
 <body>
-<center><h1>Welcome To Servlet Technology</h1></center>
-<h2>Login Page</h2>
+<center><h1>Welcome To Servlet Technology</h1></center><hr><hr>
+<h2>Login Page</h2><br>
 <form action="server" method="post">
-    UserName:<input type="text" name="name"><br><br>
-    Password:<input type="password" name="pass"><br><br>
-    <input type="submit" value="Submit">
+    <h4>UserName:<input type="text" name="name" placeholder="Ex:Khan" required><br><br></h4>
+    <h4>Password:<input type="password" name="pass" placeholder="Ex:pass12" required><br><br></h4>
+    <input type="submit" value="Submit"><hr><hr>
 </form>
 </body>
 </html>

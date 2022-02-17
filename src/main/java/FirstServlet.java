@@ -11,13 +11,24 @@ public class FirstServlet extends HttpServlet
 
         String nam=req.getParameter("name");
         String pas=req.getParameter("pass");
+
+        req.setAttribute("name",nam);
+
         if(SQLDatabase.checking(nam,pas))
         {
-            out.println("Welcome:"+nam);
+            RequestDispatcher rd=req.getRequestDispatcher("success.jsp");
+            rd.forward(req,res);
         }
         else
         {
-            out.println("UserName And Password Is Wrong");
+            out.println("<html><body style='background-color:red'>");
+            out.println("<h2 style='color:white'>");
+            out.println("UserName Or Password Is Incorrect");
+            out.println("Try Again");
+            out.println("</h2>");
+            out.println("</body></html>");
+            RequestDispatcher rd=req.getRequestDispatcher("index.html");
+            rd.include(req,res);
         }
     }
 }
